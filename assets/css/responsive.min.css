@@ -571,7 +571,7 @@ Tags:
                 padding: 14px 25px;
     }
     .menu-bar.v2 .menu-bar-content .menu-right {
-        width: calc(100% - 365px);
+        width: calc(100% - 286px);
     }
     .menu-bar.v2 .main-menu > ul > li > a,
     .menu-bar.v3 .main-menu > ul > li > a {
@@ -601,22 +601,8 @@ Tags:
         gap: 45px;
     }
     .menu-bar.v2 .menu-logo .brand-logo {
-        min-width: 320px;
-        padding: 13px 20px;
-    }
-    .menu-bar.v2 .menu-logo .brand-logo .brand-logo__mark {
-        width: 52px;
-        height: 52px;
-    }
-    .menu-bar.v2 .menu-logo .brand-logo .brand-logo__mark img {
-        width: 28px;
-        height: 28px;
-    }
-    .menu-bar.v2 .menu-logo .brand-logo .brand-logo__eyebrow {
-        font-size: 10px;
-    }
-    .menu-bar.v2 .menu-logo .brand-logo .brand-logo__name {
-        font-size: 21px;
+        width: 228px;
+        border-radius: 18px;
     }
     .banner.v2 .banner-content .text-para-1,
     .banner.v3 .banner-content .text-para-1,
