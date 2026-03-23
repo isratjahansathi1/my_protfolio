@@ -933,12 +933,26 @@ a:hover {
     justify-content: flex-end
 }
 
+.menu-bar.v2 .menu-bar-content {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    gap: 16px
+}
+
 .menu-bar.v2 .menu-bar-content .menu-right {
-    width: calc(100% - 258px)
+    width: auto;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    gap: 16px
 }
 
 .menu-bar.v2 .menu-logo,
-.menu-bar.v2 .mobile-menu-bar .mobile-menu-header .mobile-logo {
+.menu-bar.v2 .mobile-menu-bar .mobile-menu-header .mobile-logo,
+.menu-bar.v2 .menu-right .mobile-menu-btn,
+.menu-bar.v2 .menu-right .search-option-open {
     -ms-flex-negative: 0;
     flex-shrink: 0
 }
@@ -947,29 +961,39 @@ a:hover {
 .menu-bar.v2 .mobile-menu-bar .mobile-menu-header .mobile-logo .brand-logo {
     position: relative;
     display: inline-block;
-    width: 208px;
-    padding: 0;
-    border-radius: 18px;
-    background: transparent;
-    border: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+    width: clamp(180px, 43vw, 300px);
+    padding: 3px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, .28) 0%, rgba(255, 255, 255, .12) 24%, rgba(254, 173, 42, .3) 66%, rgba(248, 91, 169, .18) 100%);
+    border: 1px solid rgba(255, 255, 255, .08);
+    -webkit-box-shadow: 0 12px 24px rgba(5, 8, 28, .18);
+    box-shadow: 0 12px 24px rgba(5, 8, 28, .18);
     overflow: visible;
+    isolation: isolate;
     -webkit-transition: .4s;
     transition: .4s
 }
 
 .menu-bar.v2 .menu-logo .brand-logo::before,
 .menu-bar.v2 .mobile-menu-bar .mobile-menu-header .mobile-logo .brand-logo::before {
-    content: none
+    content: "";
+    position: absolute;
+    inset: -7px -6px -9px;
+    border-radius: 28px;
+    background: radial-gradient(circle at 18% 20%, rgba(248, 91, 169, .2), transparent 42%), radial-gradient(circle at 82% 80%, rgba(254, 173, 42, .17), transparent 38%);
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: .8;
+    z-index: -1;
+    pointer-events: none
 }
 
 .menu-bar.v2 .menu-logo .brand-logo:hover,
 .menu-bar.v2 .mobile-menu-bar .mobile-menu-header .mobile-logo .brand-logo:hover {
     -webkit-transform: translateY(-2px);
     transform: translateY(-2px);
-    -webkit-box-shadow: none;
-    box-shadow: none
+    -webkit-box-shadow: 0 16px 30px rgba(5, 8, 28, .22);
+    box-shadow: 0 16px 30px rgba(5, 8, 28, .22)
 }
 
 .menu-bar.v2 .menu-logo .brand-logo .brand-logo__image,
@@ -977,29 +1001,33 @@ a:hover {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, .16);
-    -webkit-box-shadow: 0 14px 30px rgba(5, 8, 28, .22);
-    box-shadow: 0 14px 30px rgba(5, 8, 28, .22);
-    -webkit-filter: saturate(1.03) contrast(1.01);
-    filter: saturate(1.03) contrast(1.01);
+    border-radius: 19px;
+    border: 1px solid rgba(255, 255, 255, .74);
+    -webkit-box-shadow: 0 10px 22px rgba(5, 8, 28, .14);
+    box-shadow: 0 10px 22px rgba(5, 8, 28, .14);
+    -webkit-filter: saturate(1.02) contrast(1.01) brightness(.995);
+    filter: saturate(1.02) contrast(1.01) brightness(.995);
     -webkit-transition: .4s;
     transition: .4s
 }
 
 .menu-bar.v2 .menu-logo .brand-logo:hover .brand-logo__image,
 .menu-bar.v2 .mobile-menu-bar .mobile-menu-header .mobile-logo .brand-logo:hover .brand-logo__image {
-    -webkit-box-shadow: 0 18px 36px rgba(5, 8, 28, .26);
-    box-shadow: 0 18px 36px rgba(5, 8, 28, .26)
+    -webkit-box-shadow: 0 14px 26px rgba(5, 8, 28, .18);
+    box-shadow: 0 14px 26px rgba(5, 8, 28, .18)
 }
 
 .menu-bar.v2 .mobile-menu-bar .mobile-menu-header .mobile-logo {
     padding-left: 18px
 }
 
+.menu-bar.v2 .menu-right .search-option-open {
+    display: none
+}
+
 .menu-bar.v2 .mobile-menu-bar .mobile-menu-header .mobile-logo .brand-logo {
-    width: 188px;
-    border-radius: 16px
+    width: 240px;
+    border-radius: 18px
 }
 
 .about-us.v1 .about-img img,
@@ -1594,10 +1622,75 @@ a:hover {
     max-width: none
 }
 
+.main-footer.v2 .footer-logo .footer-brand-logo,
+.main-footer.v2 .footer-logo .footer-brand-logo__image {
+    max-width: none
+}
+
 .menu-bar.v2 .main-menu li a,
 .menu-bar.v2 .menu-right .search-option-open,
 .menu-bar.v2 .mobile-menu-bar .mobile-main-manu li a {
     color: var(--color-gBlack2)
+}
+
+.main-footer.v2 .footer-content .footer-logo {
+    width: 100%;
+    text-align: center
+}
+
+.main-footer.v2 .footer-logo .footer-brand-logo {
+    position: relative;
+    display: inline-block;
+    width: clamp(220px, 72vw, 320px);
+    padding: 3px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, .28) 0%, rgba(255, 255, 255, .12) 24%, rgba(254, 173, 42, .3) 66%, rgba(248, 91, 169, .18) 100%);
+    border: 1px solid rgba(255, 255, 255, .08);
+    -webkit-box-shadow: 0 12px 24px rgba(5, 8, 28, .18);
+    box-shadow: 0 12px 24px rgba(5, 8, 28, .18);
+    overflow: visible;
+    isolation: isolate;
+    -webkit-transition: .4s;
+    transition: .4s
+}
+
+.main-footer.v2 .footer-logo .footer-brand-logo::before {
+    content: "";
+    position: absolute;
+    inset: -7px -6px -9px;
+    border-radius: 28px;
+    background: radial-gradient(circle at 18% 20%, rgba(248, 91, 169, .2), transparent 42%), radial-gradient(circle at 82% 80%, rgba(254, 173, 42, .17), transparent 38%);
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: .8;
+    z-index: -1;
+    pointer-events: none
+}
+
+.main-footer.v2 .footer-logo .footer-brand-logo:hover {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+    -webkit-box-shadow: 0 16px 30px rgba(5, 8, 28, .22);
+    box-shadow: 0 16px 30px rgba(5, 8, 28, .22)
+}
+
+.main-footer.v2 .footer-logo .footer-brand-logo .footer-brand-logo__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 19px;
+    border: 1px solid rgba(255, 255, 255, .74);
+    -webkit-box-shadow: 0 10px 22px rgba(5, 8, 28, .14);
+    box-shadow: 0 10px 22px rgba(5, 8, 28, .14);
+    -webkit-filter: saturate(1.02) contrast(1.01) brightness(.995);
+    filter: saturate(1.02) contrast(1.01) brightness(.995);
+    -webkit-transition: .4s;
+    transition: .4s
+}
+
+.main-footer.v2 .footer-logo .footer-brand-logo:hover .footer-brand-logo__image {
+    -webkit-box-shadow: 0 14px 26px rgba(5, 8, 28, .18);
+    box-shadow: 0 14px 26px rgba(5, 8, 28, .18)
 }
 
 .menu-bar.v2 .main-menu li ul {
