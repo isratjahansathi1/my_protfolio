@@ -173,9 +173,6 @@ Tags:
         -ms-flex-order: 1;
         order: 1;
     }
-    .main-footer.v2 .footer-content .footer-logo {
-        text-align: left;
-    }
 }
 @media (min-width: 992px) {
     .mt-lg-50 {
@@ -573,12 +570,6 @@ Tags:
         display: inline-block;
                 padding: 14px 25px;
     }
-    .menu-bar.v2 .menu-bar-content .menu-right {
-        width: calc(100% - 380px);
-        -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-    }
     .menu-bar.v2 .main-menu > ul > li > a,
     .menu-bar.v3 .main-menu > ul > li > a {
         padding: 32px 0;
@@ -605,13 +596,6 @@ Tags:
     .menu-bar.v2 .menu-right,
     .menu-bar.v3 .menu-right {
         gap: 45px;
-    }
-    .menu-bar.v2 .search-option-open {
-        display: inline-block;
-    }
-    .menu-bar.v2 .menu-logo .brand-logo {
-        width: 320px;
-        border-radius: 22px;
     }
     .banner.v2 .banner-content .text-para-1,
     .banner.v3 .banner-content .text-para-1,
